@@ -36,8 +36,11 @@
 				 <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
 			   {% endif %}
 			{% if perms.catalog.can_mark_returned %}
-				<li>Librarian Only</li>
-				<li><a href="{% url 'all-borrowed' %}">All Borrowed</a></li>
+			<li>Librarian Only</li>
+			<li><a href="{% url 'all-borrowed' %}">All Borrowed</a></li>
+				{% if perms.catalog.add_author %}
+				   <li><a href="{% url 'author-create' %}">Create author</a></li>
+				{% endif %}
 			{% endif %}
             </ul>			
           {% endblock %}
