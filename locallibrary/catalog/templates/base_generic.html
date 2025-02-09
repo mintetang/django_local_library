@@ -38,9 +38,9 @@
 			{% if perms.catalog.can_mark_returned %}
 			<li>Librarian Only</li>
 			<li><a href="{% url 'all-borrowed' %}">All Borrowed</a></li>
-				{% if perms.catalog.add_author %}
-				   <li><a href="{% url 'author-create' %}">Create author</a></li>
-				{% endif %}
+			{% endif %}
+			{% if perms.catalog.add_author %}
+			<li><a href="{% url 'author-create' %}">Create author</a></li>
 			{% endif %}
             </ul>			
           {% endblock %}
